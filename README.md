@@ -9,7 +9,7 @@
 ดังนั้น การใช้ Connection Pooler (PgBouncer) จึงกลายเป็น ข้อบังคับ (Mandatory) ไม่ใช่แค่ออปชันเสริมสำหรับสเปกนี้
 
 ## 1. ปรับสถาปัตยกรรม Connection (PgBouncer + PostgreSQL)
-**- ห้ามตั้ง max_connections บน PostgreSQL เกิน 60 - 80**
+***ห้ามตั้ง max_connections บน PostgreSQL เกิน 60 - 80***
   - ด้วย 4 vCPU จำนวน active connections ที่ CPU สลับการทำงานได้ดีที่สุดโดยไม่ drop throughput อยู่ที่ประมาณ (4 x 2) ถึง 40-60 connections
   - ให้ PgBouncer รับ 500 connections จากฝั่ง Client แล้วส่งต่อเข้า DB เพียง 40–60 pool connections เท่านั้น (โหมด pool_mode = transaction)
 
