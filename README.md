@@ -1,5 +1,10 @@
-# postgresql-after-install
-ถ้าสเปกเริ่มต้นเป็น 4 vCPU, RAM 8GB, Storage 200GB การรับมือกับ 500 Concurrent Connections ตรงๆ เข้า Database Node จะทำให้ RAM หมดทันที (Out of Memory - OOM) และ CPU ติดคอขวดที่ Context Switching
+# ตั้งค่า PostgrSQL สำหรับรองรับการทำงาน
+> นิยามว่าหากเรามี Server spec
+> - 4 vCPU
+> - RAM 8GB
+> - Storage 200GB
+> ต้องรองรับกับ 500 Concurrent Connections
+การที่จะต้องให้ PostgreSQL รองรับ 500 concurrent แบบตรงๆ เข้า Database Node อาจจะทำให้ RAM หมดทันที (Out of Memory - OOM) และ CPU ติดคอขวดที่ Context Switching
 ดังนั้น การใช้ Connection Pooler (PgBouncer) จึงกลายเป็น ข้อบังคับ (Mandatory) ไม่ใช่แค่ออปชันเสริมสำหรับสเปกนี้
 
 ## 1. ปรับสถาปัตยกรรม Connection (PgBouncer + PostgreSQL)
